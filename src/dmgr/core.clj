@@ -44,7 +44,7 @@
       ;; git push it to heroku
       (do
         (log "Pushing repo to Heroku")
-        (run app-path (str "cd " app "/repo && git push -f " (env (str app "_HEROKU_REPO")) " master"))
+        (run app-path (str "cd " app "/repo && git push -f " (env (str app "_HEROKU_REPO")) " " (env (str app "_GITHUB_BRANCH"))":master"))
         (println "... Finished")))))
 
 (defn valid-key?
