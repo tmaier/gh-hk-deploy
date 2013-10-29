@@ -40,7 +40,7 @@
                  (run app-path (str "cd " app "/repo && git fetch && git reset --hard origin/" (env (str app "_GITHUB_BRANCH")))))
                (do
                  (log "Starting repo clone")
-                 (run app-path (str "cd " app " && git clone -b " (env (str app "_GITHUB_BRANCH")) " --single-branch " (env (str app "_GITHUB_REPO")) " repo")))))
+                 (run app-path (str "cd " app " && git clone -b " (env (str app "_GITHUB_BRANCH")) " " (env (str app "_GITHUB_REPO")) " repo")))))
       ;; git push it to heroku
       (do
         (log "Pushing repo to Heroku")
